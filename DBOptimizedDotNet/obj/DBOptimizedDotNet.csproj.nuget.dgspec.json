@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anup\\OneDrive\\Documents\\Visual Studio 2019\\Projects\\MVC\\DynamicDB\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj": {}
+    "C:\\Users\\meanu\\Documents\\Visual Studio 2019\\Project\\Core\\DbOptimizationEFCore\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anup\\OneDrive\\Documents\\Visual Studio 2019\\Projects\\MVC\\DynamicDB\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj": {
+    "C:\\Users\\meanu\\Documents\\Visual Studio 2019\\Project\\Core\\DbOptimizationEFCore\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anup\\OneDrive\\Documents\\Visual Studio 2019\\Projects\\MVC\\DynamicDB\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj",
+        "projectUniqueName": "C:\\Users\\meanu\\Documents\\Visual Studio 2019\\Project\\Core\\DbOptimizationEFCore\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj",
         "projectName": "DBOptimizedDotNet",
-        "projectPath": "C:\\Users\\Anup\\OneDrive\\Documents\\Visual Studio 2019\\Projects\\MVC\\DynamicDB\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj",
-        "packagesPath": "C:\\Users\\Anup\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anup\\OneDrive\\Documents\\Visual Studio 2019\\Projects\\MVC\\DynamicDB\\DBOptimizedDotNet\\obj\\",
+        "projectPath": "C:\\Users\\meanu\\Documents\\Visual Studio 2019\\Project\\Core\\DbOptimizationEFCore\\DBOptimizedDotNet\\DBOptimizedDotNet.csproj",
+        "packagesPath": "C:\\Users\\meanu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\meanu\\Documents\\Visual Studio 2019\\Project\\Core\\DbOptimizationEFCore\\DBOptimizedDotNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Anup\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\meanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.13.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.10, )"
@@ -83,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

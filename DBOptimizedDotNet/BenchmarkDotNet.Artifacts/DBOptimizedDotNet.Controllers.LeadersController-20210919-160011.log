@@ -1,0 +1,107 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1
+// command took 4.67s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1
+// command took 25.23s and exited with 1
+// start dotnet build -c Release  --no-restore --no-dependencies /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1
+// command took 7.28s and exited with 0
+// ***** Done, took 00:00:37 (37.77 sec)   *****
+// Found 1 benchmarks:
+//   LeadersController.Index: DefaultJob
+
+// **************************
+// Benchmark: LeadersController.Index: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "045facbf-e177-4141-b265-905b762f03b1.dll" --benchmarkName "DBOptimizedDotNet.Controllers.LeadersController.Index" --job "Default" --benchmarkId 0 in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1\bin\Release\net5.0
+// BeforeAnythingElse
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.FileLoadException: Could not load file or assembly 'Microsoft.EntityFrameworkCore.Relational, Version=5.0.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The located assembly's manifest definition does not match the assembly reference. (0x80131040)
+File name: 'Microsoft.EntityFrameworkCore.Relational, Version=5.0.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+   at DBOptimizedDotNet.Context.AppDbContext.<>c.<OnModelCreating>b__19_0(EntityTypeBuilder`1 entity)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity[TEntity](Action`1 buildAction)
+   at DBOptimizedDotNet.Context.AppDbContext.OnModelCreating(ModelBuilder modelBuilder) in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\Context\AppDbContext.cs:line 110
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ChangeTracker()
+   at DBOptimizedDotNet.Controllers.LeadersController..ctor() in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\Controllers\LeadersController.cs:line 21
+   at BenchmarkDotNet.Autogenerated.Runnable_0..ctor() in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1\045facbf-e177-4141-b265-905b762f03b1.notcs:line 181
+   at BenchmarkDotNet.Autogenerated.Runnable_0.Run(IHost host, String benchmarkName) in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1\045facbf-e177-4141-b265-905b762f03b1.notcs:line 129
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\meanu\Documents\Visual Studio 2019\Project\Core\DbOptimizationEFCore\DBOptimizedDotNet\bin\Release\net5.0\045facbf-e177-4141-b265-905b762f03b1\045facbf-e177-4141-b265-905b762f03b1.notcs:line 51
+// AfterAll
+// Benchmark Process 10804 has exited with code -1.
+No more Benchmark runs will be launched as NO measurements were obtained from the previous run!
+
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\DBOptimizedDotNet.Controllers.LeadersController-report.csv
+  BenchmarkDotNet.Artifacts\results\DBOptimizedDotNet.Controllers.LeadersController-report-github.md
+  BenchmarkDotNet.Artifacts\results\DBOptimizedDotNet.Controllers.LeadersController-report.html
+
+// * Detailed results *
+LeadersController.Index: DefaultJob
+Runtime = ; GC = 
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.22458
+Intel Core i5-10210U CPU 1.60GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=6.0.100-preview.6.21355.2
+  [Host] : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT  [AttachedDebugger]
+
+
+| Method | Mean | Error |
+|------- |-----:|------:|
+|  Index |   NA |    NA |
+
+Benchmarks with issues:
+  LeadersController.Index: DefaultJob
+
+// * Warnings *
+Environment
+  Summary -> Benchmark was executed with attached debugger
+
+// * Legends *
+  Mean  : Arithmetic mean of all measurements
+  Error : Half of 99.9% confidence interval
+  1 ns  : 1 Nanosecond (0.000000001 sec)
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:02 (2.12 sec), executed benchmarks: 1
+
+Global total time: 00:00:39 (39.91 sec), executed benchmarks: 1
+// * Artifacts cleanup *

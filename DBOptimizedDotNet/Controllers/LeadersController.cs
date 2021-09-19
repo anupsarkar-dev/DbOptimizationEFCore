@@ -1,4 +1,12 @@
-﻿using DBOptimizedDotNet.Context;
+﻿using BenchmarkDotNet.Analysers;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Columns;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Exporters;
+using BenchmarkDotNet.Exporters.Csv;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Loggers;
+using DBOptimizedDotNet.Context;
 using DBOptimizedDotNet.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,17 +17,27 @@ using System.Threading.Tasks;
 
 namespace DBOptimizedDotNet.Controllers
 {
+
+    //[DryJob]
+    //[JsonExporterAttribute.Brief]
+    //[JsonExporter("-custom", indentJson: true, excludeMeasurements: true)]
     public class LeadersController : Controller
     {
         AppDbContext context;
+
+       
 
         public LeadersController()
         {
             context = new AppDbContext();
             context.ChangeTracker.AutoDetectChangesEnabled = false;
+      
         }
+
+        //[Benchmark]
         public IActionResult Index()
         {
+
             var stopwatch = Stopwatch.StartNew();
             Debug.WriteLine($"Started....");
 
@@ -36,27 +54,29 @@ namespace DBOptimizedDotNet.Controllers
 
             List<Leader> leaders = new();
 
-            while(i < 1000)
+
+            var n = 100000;
+            while (i <= n)
             {
                 var clone = (Leader)leader.Clone();
                 
                 clone.Guid = Guid.NewGuid();
                 leaders.Add(clone);
-                
+                //  context.Leaders.Add(clone);
                 i++;
                 clone = null;
             }
 
-            context.Leaders.AddRange(leaders);
+
+             context.Leaders.AddRange(leaders);
+
+             context.SaveChanges();
+
+             Debug.WriteLine($"Total {n} Rows To Process Time Taken  : {stopwatch.ElapsedMilliseconds}ms , {stopwatch.ElapsedMilliseconds/1000} sec");
 
 
-            Debug.WriteLine($"Total Time Taken To Process Request : {stopwatch.ElapsedMilliseconds}ms");
 
-
-            context.SaveChanges();
-
-
-            return Json($"Total Time Taken To Process Request : {stopwatch.ElapsedMilliseconds}ms");
+            return Json($"Total {n} Rows To Process Time Taken  : {stopwatch.ElapsedMilliseconds}ms , {stopwatch.ElapsedMilliseconds / 1000} sec");
         }
     }
 }

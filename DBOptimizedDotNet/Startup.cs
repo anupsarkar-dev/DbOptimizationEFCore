@@ -24,6 +24,7 @@ namespace DBOptimizedDotNet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
        
         }
 
@@ -43,7 +44,7 @@ namespace DBOptimizedDotNet
             app.UseRouting();
 
             app.UseAuthorization();
-
+             
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
