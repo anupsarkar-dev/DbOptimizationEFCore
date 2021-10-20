@@ -1,3 +1,4 @@
+using DBOptimizedDotNet.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,8 +25,10 @@ namespace DBOptimizedDotNet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
-       
+            services.AddDbContext<AppDbContext>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

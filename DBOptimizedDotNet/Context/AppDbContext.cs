@@ -30,10 +30,12 @@ namespace DBOptimizedDotNet.Context
             if (!optionsBuilder.IsConfigured)
             {
 
-                // optionsBuilder.UseSqlServer("Server=DESKTOP-BN3GLN3;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=true");
-                //optionsBuilder.UseSqlServer("Server=DESKTOP-INCUF6M;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=true");
+                // optionsBuilder.UseSqlServer("=DESKTOP-BN3GLN3;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXP2019;Initial Catalog=DBOptimizations;Integrated Security=True;MultipleActiveResultSets=true");
 
-                optionsBuilder.UseSqlServer("Data Source=192.168.8.111;Initial Catalog=test;Persist Security Info=True;User ID=sa;Password=HPL123&*(;MultipleActiveResultSets=True");
+               // optionsBuilder.UseSqlServer("Data Source=192.168.8.111;Initial Catalog=test;Persist Security Info=True;User ID=sa;Password=HPL123&*(;MultipleActiveResultSets=True");
+
+
 
             }
         }

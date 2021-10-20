@@ -36,7 +36,7 @@ namespace DBOptimizedDotNet.Controllers
 
             using (var sqlcmnd = new SqlCommand())
             {
-                sqlcmnd.Connection = new SqlConnection("Server=DESKTOP-BN3GLN3;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=true");
+                sqlcmnd.Connection = new SqlConnection("Server=DESKTOP-INCUF6M]\\SQLEXP2019;Database=DBOptimizations;Trusted_Connection=True;MultipleActiveResultSets=true");
 
                 //Execute normal query
                 var result = await sqlcmnd.ExecuteQueryAsync("exec [dbo].[Proc_GetAllBooks]");
