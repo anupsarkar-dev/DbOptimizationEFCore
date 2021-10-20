@@ -153,8 +153,8 @@ namespace DBOptimizedDotNet.Controllers
                 using var context3 = _serviceScopeFactory.CreateScope().ServiceProvider.GetRequiredService<AppDbContext>();
 
                 var task1 = Proc_GetLeadersCountWithContextAsync(context1, "[dbo].[Proc_GetLeadersCount1]", tokens[0]);
-                var task2 = Proc_GetLeadersCountWithContextAsync(context2, "[dbo].[Proc_GetLeadersCount2]", tokens[0]);
-                var task3 = Proc_GetLeadersCountWithContextAsync(context3, "[dbo].[Proc_GetLeadersCount3]", tokens[0]);
+                var task2 = Proc_GetLeadersCountWithContextAsync(context2, "[dbo].[Proc_GetLeadersCount2]", tokens[1]);
+                var task3 = Proc_GetLeadersCountWithContextAsync(context3, "[dbo].[Proc_GetLeadersCount3]", tokens[2]);
 
 
                 var tasks = new[] { task1, task2, task3 };
